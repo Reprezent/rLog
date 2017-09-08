@@ -1,7 +1,7 @@
 // 
 // rlog Library (C++ 11)
 //
-// Version 0.1 (Last Updated: 5/10/2017)
+// Version 0.1 (Last Updated: 8/5/2017)
 //
 // Description:
 //    This class implements a Logging utility for use within
@@ -130,6 +130,7 @@ void rlog::__flush()
 
 void rlog::__run()
 {
+	// TODO: Fix this with less busy waiting.
 	while(true)
 	{
 		if(FLUSH)
@@ -154,6 +155,7 @@ void rlog::__run()
 				outputQueue.pop();
 			}
 			unlock();
+			std::this_thread::sleep_for(std::chrono::duration<int>(RLOG_WRITER_THREAD_SLEEP_TIME));
 		
 	}
 }

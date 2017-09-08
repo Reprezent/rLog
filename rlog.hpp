@@ -1,7 +1,7 @@
 // 
 // rlog Library (C++ 11)
 //
-// Version 0.1 (Last Updated: 5/10/2017)
+// Version 0.1 (Last Updated: 8/5/2017)
 //
 // Description:
 //    This class implements a Logging utility for use within
@@ -13,6 +13,15 @@
 
 
 #pragma once
+
+#ifndef RLOG_WRITER_THREAD_SLEEP_TIME
+
+// Defines the total number of milliseconds for the writer thread
+// to wait for between flushes. 
+#define RLOG_WRITER_THREAD_SLEEP_TIME 1000
+
+#endif
+
 
 #include <chrono>
 #include <fstream>

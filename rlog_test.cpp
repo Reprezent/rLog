@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 #include <thread>
 #include <vector>
@@ -23,6 +24,7 @@ void addstuff(std::string name)
 
 int main(int argc, char** argv)
 {
+//	std::cout << "SIZE OF rLOG " << sizeof(rlog) << std::endl;
 	std::vector<std::thread> threads;
 	for(unsigned int i = 0; i < NUM_THREADS; i++)
 	{
